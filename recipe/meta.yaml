@@ -1,5 +1,5 @@
 {% set name = "seed-isort-config" %}
-{% set version = "2.1.1" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: fbaf28b850c9c4f205dc90fbcc99cf422bce144df1b570340c973dd3fac77578
+  sha256: be4cfef8f9a3fe8ea1817069c6b624538ac0b429636ec746edeb27e98ed628c8
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - seed-isort-config = seed_isort_config:main
 
@@ -35,7 +35,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Statically populate the known_third_party isort setting'
+  summary: Statically populate the known_third_party isort setting
   dev_url: https://github.com/asottile/seed-isort-config
 
 extra:
